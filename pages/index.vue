@@ -22,11 +22,16 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
+
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  font-family: 'IBM Plex Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .sidebar {

@@ -40,7 +40,16 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    // Simple usage
+    '@nuxtjs/netlify-files',
+    // With options
+    [
+      '@nuxtjs/netlify-files',
+      {
+        /* module options */
+      }
+    ]
   ],
   /*
    ** Axios module configuration
