@@ -1,48 +1,33 @@
 <template>
   <div>
-    <div class="sidebar">
-      <Sidebar />
-    </div>
-    <div class="contents">
-      <Contents />
-    </div>
+    <Sidebar />
+    <Statics />
   </div>
 </template>
 
 <script>
 import Sidebar from '~/components/Sidebar.vue'
-import Contents from '~/components/Contents.vue'
+import Statics from '~/components/Statics.vue'
 
 export default {
   components: {
     Sidebar,
-    Contents
+    Statics
   }
 }
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 
 html,
 body {
   margin: 0;
   padding: 0;
   min-height: 100%;
-  font-family: 'IBM Plex Sans', sans-serif;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.sidebar {
-  display: inline-block;
-  border-right: solid 1px #eee;
-  width: 330px;
-  height: 100%;
-}
-
-.contents {
-  display: inline-block;
-  width: calc(100% - 335px);
 }
 </style>

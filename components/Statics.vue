@@ -13,16 +13,16 @@
           @setActiveCountry="handleSetActiveCountry"
         />
       </aside>
-      <section>
+      <div class="stats">
         <div class="sticky">
-          <Global v-if="!activeCountry" />
+          <Worldwide v-if="!activeCountry" />
           <Country
             v-else
             :activeCountry="activeCountry"
             @setActiveCountry="handleSetActiveCountry(null)"
           />
         </div>
-      </section>
+      </div>
     </div>
     <div v-else class="container loading">
       Loading...
@@ -33,13 +33,13 @@
 
 <script>
 import Country from './Country.vue'
-import Global from './Global.vue'
+import Worldwide from './Worldwide.vue'
 import List from './List.vue'
 export default {
   name: 'App',
   components: {
     Country,
-    Global,
+    Worldwide,
     List
   },
   watch: {
@@ -92,14 +92,13 @@ export default {
   --color-pink: #ea5068;
   --color-dark-red: darken(#b93332, 10%);
 }
-body,
-html {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+
 #app {
-  padding: 60px 10px 0 10px;
+  position: absolute;
+  top: 0;
+  left: 330px;
+  width: calc(100% - 330px);
+
   .burger {
     position: fixed;
     top: 10px;
@@ -140,11 +139,6 @@ html {
     color: var(--color-pink);
   }
   .container {
-    max-width: 1280px;
-    position: relative;
-    border-radius: 20px 20px 0 0;
-    margin: auto;
-    height: auto;
     min-height: 100vh;
     padding: 0;
     aside {
@@ -159,25 +153,17 @@ html {
         transform: translateX(0);
       }
     }
-    h1 {
+
+    .stats {
+      border-top: 30px;
+      border-bottom: 30px;
+      border-left: solid 1px #eaeaea;
       text-align: center;
-      margin: 0;
-    }
-    .title {
-      font-size: 2.6em;
-      margin-top: 0;
-      text-align: center;
-    }
-    section {
-      padding: 20px;
-      .sticky {
-        position: sticky;
-        top: 40px;
+      h2 {
+        font-size: 20px;
       }
-      .og-image {
-        img {
-          width: 100%;
-        }
+      h3 {
+        font-size: 15px;
       }
     }
     &.loading {
@@ -198,7 +184,7 @@ html {
     }
     @media (min-width: 1024px) {
       display: grid;
-      grid-template-columns: 400px 1fr;
+      grid-template-columns: 1fr 330px;
       aside {
         position: static;
         width: auto;
@@ -238,20 +224,17 @@ html {
     }
   }
   .card {
-    border-radius: 10px;
-    margin: 30px 0;
-    padding: 20px;
+    margin: 10px 0;
+    padding: 10px;
     text-align: center;
-    h4 {
-      margin: 0 0 30px 0;
-    }
+
     .count {
-      color: var(--color-red);
-      font-size: 3rem;
+      color: var(--color-pink);
+      font-size: 1.5rem;
     }
     .date {
-      color: var(--color-red);
-      font-size: 1.4rem;
+      color: var(--color-pink);
+      font-size: 1.5rem;
     }
   }
 }

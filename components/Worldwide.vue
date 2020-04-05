@@ -1,24 +1,30 @@
 <template>
-  <div class="global">
-    <h2 class="title">Covid-19 Global Figures</h2>
+  <div class="worldwide">
+    <h2>Worldwide</h2>
     <div class="card-container">
       <div class="confirmed card">
         <h4>Confirmed Cases</h4>
-        <span class="count">{{
+        <span class="count">
+          {{
           new Intl.NumberFormat({ style: 'unit' }).format(confirmedCases)
-        }}</span>
+          }}
+        </span>
       </div>
       <div class="recovered card">
         <h4>Recovered</h4>
-        <span class="count">{{
+        <span class="count">
+          {{
           new Intl.NumberFormat({ style: 'unit' }).format(recoveredCases)
-        }}</span>
+          }}
+        </span>
       </div>
       <div class="deaths card">
         <h4>Deaths</h4>
-        <span class="count">{{
+        <span class="count">
+          {{
           new Intl.NumberFormat({ style: 'unit' }).format(totalDeaths)
-        }}</span>
+          }}
+        </span>
       </div>
     </div>
     <div class="card">
@@ -30,7 +36,7 @@
 
 <script>
 export default {
-  name: 'Global',
+  name: 'Worldwide',
   data() {
     return {
       loading: true,

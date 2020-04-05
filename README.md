@@ -21,7 +21,14 @@ $ yarn generate
 
 ## Netlify
 
-[https://unruffled-montalcini-00202b.netlify.com](https://unruffled-montalcini-00202b.netlify.com)
+[https://unruffled-montalcini-00202b.netlify.com](https://unruffled-montalcini-00202b.netlify.com
+
+## Typography
+
+### Inter
+
+[Inter](https://rsms.me/inter/)
+[Google Fonts](https://fonts.google.com/specimen/Inter)
 
 ## References
 

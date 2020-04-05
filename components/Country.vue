@@ -1,11 +1,11 @@
 <template>
   <div class="country">
     <header>
-      <h2 class="title">Cases in {{ activeCountry.countryRegion }}</h2>
+      <h2>Cases in {{ activeCountry.countryRegion }}</h2>
     </header>
     <div class="card-container">
       <div class="confirmed card">
-        <h4>Confirmed Cases</h4>
+        <h3>Confirmed Cases</h3>
         <span class="count">
           {{
           new Intl.NumberFormat({ style: 'unit' }).format(
@@ -28,7 +28,9 @@
         <h4>Deaths</h4>
         <span class="count">
           {{
-          new Intl.NumberFormat({ style: 'unit' }).format(activeCountry.deaths)
+          new Intl.NumberFormat({ style: 'unit' }).format(
+          activeCountry.deaths
+          )
           }}
         </span>
       </div>
@@ -77,6 +79,12 @@ export default {
 
 <style lang="scss" scoped>
 .country {
+  header {
+    h2 {
+      font-size: 30px;
+    }
+  }
+
   footer {
     text-align: center;
     button {
