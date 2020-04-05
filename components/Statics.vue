@@ -89,7 +89,7 @@ export default {
   }
 }
 :root {
-  --color-red: #b93332;
+  --color-pink: #ea5068;
   --color-dark-red: darken(#b93332, 10%);
 }
 body,
@@ -137,7 +137,7 @@ html {
     }
   }
   .highlight {
-    color: var(--color-red);
+    color: var(--color-pink);
   }
   .container {
     max-width: 1280px;

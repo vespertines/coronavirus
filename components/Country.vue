@@ -80,7 +80,7 @@ export default {
   footer {
     text-align: center;
     button {
-      background-color: var(--color-red);
+      background-color: var(--color-pink);
       border: none;
       color: #000;
       cursor: pointer;

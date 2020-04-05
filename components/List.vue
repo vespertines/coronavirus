@@ -132,7 +132,7 @@ export default {
       span > svg {
         height: 18px;
         width: 18px;
-        color: var(--color-red);
+        color: var(--color-pink);
       }
       span:first-child > svg {
         color: inherit;
@@ -141,7 +141,7 @@ export default {
       }
       &:hover,
       &.active {
-        color: var(--color-red);
+        color: var(--color-pink);
         font-weight: 600;
       }
       &:first-child {
