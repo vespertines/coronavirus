@@ -21,7 +21,7 @@ $ yarn generate
 
 ## Netlify
 
-[https://angry-aryabhata-01a5f7.netlify.com](https://angry-aryabhata-01a5f7.netlify.com)
+[https://unruffled-montalcini-00202b.netlify.com](https://unruffled-montalcini-00202b.netlify.com)
 
 ## References
 
