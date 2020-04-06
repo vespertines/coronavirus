@@ -1,16 +1,16 @@
 <template>
   <div class="sidebar">
     <div class="logo">
-      <nuxt-link to="/">
+      <a href="/">
         <img src="@/static/images/logo.svg" />
-      </nuxt-link>
+      </a>
     </div>
     <div class="credit">
       <span>
         Built by
-        <nuxt-link to="https://www.heavyheavyheavy.com/">
+        <a href="https://www.heavyheavyheavy.com/" target="_blank">
           Heavy Industries
-        </nuxt-link>
+        </a>
       </span>
     </div>
   </div>
