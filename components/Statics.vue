@@ -23,7 +23,6 @@
       </div>
     </div>
     <div v-else class="container loading">
-      Loading...
       <div class="spinner"></div>
     </div>
   </div>
@@ -143,10 +142,10 @@ export default {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100%;
+      z-index: 3;
       transform: translateX(-100%);
       transition: transform 0.5s ease-in-out;
-      z-index: 3;
+      width: 100%;
       &.open {
         transform: translateX(0);
       }
@@ -157,14 +156,14 @@ export default {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      border-left: solid 1px var(--color-light-grey);
       .spinner {
-        border: 2px solid #fff;
+        border: 2px solid var(--color-pink);
         border-bottom-color: transparent;
         border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        margin-top: -100px;
-        animation: spin 0.4s linear infinite;
+        height: 30px;
+        width: 30px;
+        animation: spin 0.5s linear infinite;
       }
     }
     @media (min-width: 1024px) {
@@ -204,7 +203,7 @@ export default {
         color: var(--color-pink);
         font-size: 30px;
         font-weight: 700;
-        letter-spacing: -0.025em;
+        letter-spacing: -0.05em;
       }
     }
     .updated {

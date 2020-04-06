@@ -8,8 +8,8 @@
     <div class="credit">
       <span>
         Built by
-        <a href="https://www.heavyheavyheavy.com/" target="_blank">
-          Heavy Industries
+        <a href="mailto:atelier.jullian@gmail.com">
+          Kwang-Su Kim
         </a>
       </span>
     </div>
