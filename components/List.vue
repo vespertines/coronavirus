@@ -4,49 +4,41 @@
       <thead>
         <tr>
           <th>Location</th>
-          <th @click="sortㅅMethod = 'confirmed'">
+          <th @click="sortMethod = 'confirmed'">
             Confirmed
-            <!-- <br />
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-              <path
-                fill="currentColor"
-                d="M288 288H32c-28.4 0-42.8 34.5-22.6 54.6l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c20-20.1 5.7-54.6-22.7-54.6zM160 448L32 320h256L160 448zM32 224h256c28.4 0 42.8-34.5 22.6-54.6l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128C-10.7 189.5 3.6 224 32 224zM160 64l128 128H32L160 64z"
-              />
-            </svg>-->
           </th>
           <th @click="sortMethod = 'recovered'">
             Recovered
-            <!-- <br />
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-              <path
-                fill="currentColor"
-                d="M288 288H32c-28.4 0-42.8 34.5-22.6 54.6l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c20-20.1 5.7-54.6-22.7-54.6zM160 448L32 320h256L160 448zM32 224h256c28.4 0 42.8-34.5 22.6-54.6l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128C-10.7 189.5 3.6 224 32 224zM160 64l128 128H32L160 64z"
-              />
-            </svg>-->
           </th>
           <th @click="sortMethod = 'deaths'">
             Deaths
-            <!-- <br />
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-              <path
-                fill="currentColor"
-                d="M288 288H32c-28.4 0-42.8 34.5-22.6 54.6l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c20-20.1 5.7-54.6-22.7-54.6zM160 448L32 320h256L160 448zM32 224h256c28.4 0 42.8-34.5 22.6-54.6l-128-128c-12.5-12.5-32.8-12.5-45.3 0l-128 128C-10.7 189.5 3.6 224 32 224zM160 64l128 128H32L160 64z"
-              />
-            </svg>-->
           </th>
         </tr>
       </thead>
-
       <tbody
         v-for="(country, index) in sortedCountries"
         :key="index"
         :class="{ active: selectedCountryIndex === country.countryRegion }"
       >
         <tr>
-          <td @click="handleSelectedCountry(index)">{{ country.countryRegion }}</td>
-          <td>{{ country.confirmed }}</td>
-          <td>{{ country.recovered }}</td>
-          <td>{{ country.deaths }}</td>
+          <td @click="handleSelectedCountry(index)">
+            {{ country.countryRegion }}
+          </td>
+          <td>
+            {{
+              new Intl.NumberFormat({ style: 'unit' }).format(country.confirmed)
+            }}
+          </td>
+          <td>
+            {{
+              new Intl.NumberFormat({ style: 'unit' }).format(country.recovered)
+            }}
+          </td>
+          <td>
+            {{
+              new Intl.NumberFormat({ style: 'unit' }).format(country.deaths)
+            }}
+          </td>
         </tr>
       </tbody>
     </table>
@@ -105,50 +97,61 @@ export default {
 .list {
   width: 100%;
   height: 100vh;
-
-  // @media (min-width: 1024px) {
-  //   height: auto;
-  //   min-height: 100vh;
-  //   overflow-y: auto;
-  // }
-
+  border-left: solid 1px var(--color-light-grey);
+  border-right: solid 1px var(--color-light-grey);
   table {
+    margin: 0;
     border-top: none;
     border-bottom: none;
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    text-align: left;
-    position: relative;
     border-collapse: collapse;
-
-    tr {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      cursor: pointer;
-
-      th {
-        position: -webkit-sticky;
+    width: 100%;
+    text-align: left;
+    thead {
+      tr {
         position: sticky;
         top: 0;
-        z-index: 2;
+        border-bottom: solid 1px var(--color-light-grey);
+        th {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          background-color: var(--color-white);
+          color: var(--color-grey);
+          font-size: 15px;
+          font-weight: 500;
+        }
       }
-
-      th[scope='row'] {
-        position: -webkit-sticky;
-        position: sticky;
-        left: 0;
-        z-index: 1;
+    }
+    tbody {
+      tr {
+        border-bottom: solid 1px var(--color-lighter-grey);
+        td {
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
       }
-
+    }
+    tr {
+      display: grid;
+      grid-template-columns: 3fr 1fr 1fr 1fr;
+      cursor: pointer;
       th,
       td {
         padding-left: 30px;
         padding-right: 30px;
       }
-
+      td {
+        &:hover,
+        &.active {
+          color: var(--color-pink);
+          font-weight: 600;
+        }
+        &:first-child {
+          font-weight: 700;
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
       td > svg {
         height: 18px;
         width: 18px;
@@ -158,19 +161,6 @@ export default {
         color: inherit;
         height: 10px;
         width: 10px;
-      }
-      &:hover,
-      &.active {
-        color: var(--color-pink);
-        font-weight: 600;
-      }
-      &:first-child {
-        font-size: 15px;
-        font-weight: bold;
-        margin: 0px auto 10px auto;
-        &:hover {
-          color: inherit;
-        }
       }
     }
   }

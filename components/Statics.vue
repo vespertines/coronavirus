@@ -14,14 +14,12 @@
         />
       </aside>
       <div class="stats">
-        <div class="sticky">
-          <Worldwide v-if="!activeCountry" />
-          <Country
-            v-else
-            :activeCountry="activeCountry"
-            @setActiveCountry="handleSetActiveCountry(null)"
-          />
-        </div>
+        <Worldwide v-if="!activeCountry" />
+        <Country
+          v-else
+          :activeCountry="activeCountry"
+          @setActiveCountry="handleSetActiveCountry(null)"
+        />
       </div>
     </div>
     <div v-else class="container loading">
@@ -80,6 +78,15 @@ export default {
 </script>
 
 <style lang="scss">
+:root {
+  --color-pink: #ea5068;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-grey: #999999;
+  --color-light-grey: rgba(0, 0, 0, 0.1);
+  --color-lighter-grey: rgba(0, 0, 0, 0.05);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -87,10 +94,6 @@ export default {
   to {
     transform: rotate(360deg);
   }
-}
-:root {
-  --color-pink: #ea5068;
-  --color-dark-red: darken(#b93332, 10%);
 }
 
 #app {
@@ -119,7 +122,7 @@ export default {
       transition: transform 0.3s;
     }
     &.open {
-      left: 300px;
+      left: 100%;
       padding-right: 0;
       span {
         transform-origin: left;
@@ -135,37 +138,52 @@ export default {
       }
     }
   }
-  .highlight {
-    color: var(--color-pink);
-  }
   .container {
-    min-height: 100vh;
+    margin: 0;
     padding: 0;
+    min-height: 100vh;
     aside {
       position: fixed;
       top: 0;
       left: 0;
-      width: 300px;
-      transform: translateX(-300px);
-      transition: transform 0.3s ease-in-out;
+      width: 100%;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease-in-out;
       z-index: 3;
       &.open {
         transform: translateX(0);
       }
     }
-
     .stats {
-      border-top: 30px;
-      border-bottom: 30px;
-      border-left: solid 1px #eaeaea;
+      padding-top: 30px;
+      padding-bottom: 30px;
       text-align: center;
-      h2 {
-        font-size: 20px;
-      }
-      h3 {
-        font-size: 15px;
+      .element {
+        h2 {
+          margin-top: 0;
+          font-size: 20px;
+          font-weight: 700;
+          letter-spacing: -0.025em;
+        }
+        h3 {
+          margin-top: 0;
+          margin-bottom: 10px;
+          color: var(--color-grey);
+          font-size: 15px;
+          font-weight: 500;
+        }
+        .count {
+          padding-bottom: 30px;
+          span {
+            color: var(--color-pink);
+            font-size: 25px;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+          }
+        }
       }
     }
+
     &.loading {
       min-height: 100vh;
       display: flex;
@@ -196,45 +214,24 @@ export default {
       }
     }
   }
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    grid-gap: 20px;
-    margin-bottom: 30px;
-    > .card {
-      margin: 0;
-    }
-    @media (min-width: 1024px) {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      .card {
-        &.death-rate,
-        &.updated {
-          grid-column: 1 / -1;
-        }
-      }
-    }
-    @media (min-width: 1366px) {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      .card {
-        &.death-rate,
-        &.updated {
-          grid-column: 1 / -1;
-        }
-      }
-    }
+  .updated {
+    color: var(--color-grey);
+    font-size: 10px;
+    font-weight: 500;
   }
-  .card {
-    margin: 10px 0;
-    padding: 10px;
-    text-align: center;
-
-    .count {
-      color: var(--color-pink);
-      font-size: 1.5rem;
-    }
-    .date {
-      color: var(--color-pink);
-      font-size: 1.5rem;
+  button {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 10px 30px;
+    border: solid 1px var(--color-light-grey);
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in-out;
+    cursor: pointer;
+    font-size: 10px;
+    font-weight: 600;
+    &:hover,
+    &:focus {
+      outline: none;
     }
   }
 }

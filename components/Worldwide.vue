@@ -1,36 +1,44 @@
 <template>
   <div class="worldwide">
-    <h2>Worldwide</h2>
-    <div class="card-container">
-      <div class="confirmed card">
-        <h4>Confirmed Cases</h4>
-        <span class="count">
-          {{
-          new Intl.NumberFormat({ style: 'unit' }).format(confirmedCases)
-          }}
-        </span>
+    <header>
+      <h2>Worldwide</h2>
+    </header>
+    <main>
+      <div class="element">
+        <h3>Confirmed Cases</h3>
+        <div class="count">
+          <span>
+            {{
+              new Intl.NumberFormat({ style: 'unit' }).format(confirmedCases)
+            }}
+          </span>
+        </div>
       </div>
-      <div class="recovered card">
-        <h4>Recovered</h4>
-        <span class="count">
-          {{
-          new Intl.NumberFormat({ style: 'unit' }).format(recoveredCases)
-          }}
-        </span>
+      <div class="element">
+        <h3>Recovered</h3>
+        <div class="count">
+          <span>
+            {{
+              new Intl.NumberFormat({ style: 'unit' }).format(recoveredCases)
+            }}
+          </span>
+        </div>
       </div>
-      <div class="deaths card">
-        <h4>Deaths</h4>
-        <span class="count">
-          {{
-          new Intl.NumberFormat({ style: 'unit' }).format(totalDeaths)
-          }}
-        </span>
+      <div class="element">
+        <h3>Deaths</h3>
+        <div class="count">
+          <span>
+            {{ new Intl.NumberFormat({ style: 'unit' }).format(totalDeaths) }}
+          </span>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <h4>Death Rate</h4>
-      <span class="count">{{ deathRate }}%</span>
-    </div>
+      <div class="element">
+        <h3>Death Rate</h3>
+        <div class="count">
+          <span>{{ deathRate }}%</span>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 

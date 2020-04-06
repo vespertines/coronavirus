@@ -1,4 +1,4 @@
-# coronavirus
+# Coronavirus Statics
 
 > Coronavirus Statics
 
@@ -27,10 +27,12 @@ $ yarn generate
 
 ### Inter
 
-[Inter](https://rsms.me/inter/)
-[Google Fonts](https://fonts.google.com/specimen/Inter)
+- [Inter Website](https://rsms.me/inter)
+- [Dynamic Metrics](https://rsms.me/inter/dynmetrics)
+- [Google Fonts Hosting](https://fonts.google.com/specimen/Inter)
 
 ## References
 
 - https://google.org/crisisresponse/covid19-map
 - https://github.com/forbesg/CoronavirusAPI-Vue-UI
+- https://www.bing.com/covid
