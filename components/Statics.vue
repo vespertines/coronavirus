@@ -86,7 +86,6 @@ export default {
   --color-light-grey: rgba(0, 0, 0, 0.1);
   --color-lighter-grey: rgba(0, 0, 0, 0.05);
 }
-
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -95,13 +94,11 @@ export default {
     transform: rotate(360deg);
   }
 }
-
 #app {
   position: absolute;
   top: 0;
   left: 330px;
   width: calc(100% - 330px);
-
   .burger {
     position: fixed;
     top: 10px;
@@ -158,32 +155,56 @@ export default {
       padding-top: 30px;
       padding-bottom: 30px;
       text-align: center;
-      .element {
-        h2 {
-          margin-top: 0;
-          font-size: 20px;
-          font-weight: 700;
+      h2 {
+        margin-top: 30px;
+        margin-bottom: 60px;
+        font-size: 25px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+      h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: var(--color-grey);
+        font-size: 15px;
+        font-weight: 500;
+      }
+      .count {
+        padding-bottom: 30px;
+        span {
+          color: var(--color-pink);
+          font-size: 25px;
+          font-weight: 600;
           letter-spacing: -0.025em;
         }
-        h3 {
-          margin-top: 0;
-          margin-bottom: 10px;
-          color: var(--color-grey);
-          font-size: 15px;
-          font-weight: 500;
-        }
-        .count {
-          padding-bottom: 30px;
-          span {
-            color: var(--color-pink);
-            font-size: 25px;
-            font-weight: 600;
-            letter-spacing: -0.025em;
+      }
+      .updated {
+        color: var(--color-grey);
+        font-size: 10px;
+        font-weight: 500;
+      }
+      footer {
+        position: fixed;
+        bottom: 0px;
+        right: 0;
+        width: 330px;
+        button {
+          margin-top: 30px;
+          margin-bottom: 30px;
+          padding: 10px 30px;
+          border: solid 1px var(--color-light-grey);
+          transition: background-color 0.5s ease-in-out;
+          cursor: pointer;
+          font-size: 10px;
+          font-weight: 600;
+          &:hover,
+          &:focus {
+            outline: none;
+            background-color: var(--color-lighter-grey);
           }
         }
       }
     }
-
     &.loading {
       min-height: 100vh;
       display: flex;
@@ -208,30 +229,7 @@ export default {
         width: auto;
         transform: translateX(0px);
         height: auto;
-        .list {
-          overflow: auto;
-        }
       }
-    }
-  }
-  .updated {
-    color: var(--color-grey);
-    font-size: 10px;
-    font-weight: 500;
-  }
-  button {
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 10px 30px;
-    border: solid 1px var(--color-light-grey);
-    border-radius: 2px;
-    transition: background-color 0.2s ease-in-out;
-    cursor: pointer;
-    font-size: 10px;
-    font-weight: 600;
-    &:hover,
-    &:focus {
-      outline: none;
     }
   }
 }

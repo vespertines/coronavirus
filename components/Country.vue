@@ -1,10 +1,10 @@
 <template>
   <div class="country">
     <header>
-      <h2>Cases in {{ activeCountry.countryRegion }}</h2>
+      <h2>{{ activeCountry.countryRegion }}</h2>
     </header>
     <main>
-      <div class="element">
+      <section>
         <h3>Confirmed Cases</h3>
         <div class="count">
           <span>
@@ -15,8 +15,8 @@
             }}
           </span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <h3>Recovered</h3>
         <div class="count">
           <span>
@@ -27,8 +27,8 @@
             }}
           </span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <h3>Deaths</h3>
         <div class="count">
           <span>
@@ -39,14 +39,14 @@
             }}
           </span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <h3>Death Rate</h3>
         <div class="count">
           <span>{{ deathRate }}%</span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <span class="updated">
           Last updated on
           {{
@@ -58,7 +58,7 @@
             })
           }}
         </span>
-      </div>
+      </section>
     </main>
     <footer>
       <button @click="$emit('setActiveCountry')">View Global Stats</button>

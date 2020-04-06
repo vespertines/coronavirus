@@ -97,10 +97,12 @@ export default {
 .list {
   width: 100%;
   height: 100vh;
+  overflow: auto;
   border-left: solid 1px var(--color-light-grey);
   border-right: solid 1px var(--color-light-grey);
   table {
     margin: 0;
+    background-color: var(--color-white);
     border-top: none;
     border-bottom: none;
     border-collapse: collapse;
@@ -114,7 +116,6 @@ export default {
         th {
           padding-top: 20px;
           padding-bottom: 20px;
-          background-color: var(--color-white);
           color: var(--color-grey);
           font-size: 15px;
           font-weight: 500;
@@ -138,6 +139,7 @@ export default {
       td {
         padding-left: 30px;
         padding-right: 30px;
+        background-color: var(--color-white);
       }
       td {
         &:hover,

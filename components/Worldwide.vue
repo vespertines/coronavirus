@@ -4,7 +4,7 @@
       <h2>Worldwide</h2>
     </header>
     <main>
-      <div class="element">
+      <section>
         <h3>Confirmed Cases</h3>
         <div class="count">
           <span>
@@ -13,8 +13,8 @@
             }}
           </span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <h3>Recovered</h3>
         <div class="count">
           <span>
@@ -23,21 +23,21 @@
             }}
           </span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <h3>Deaths</h3>
         <div class="count">
           <span>
             {{ new Intl.NumberFormat({ style: 'unit' }).format(totalDeaths) }}
           </span>
         </div>
-      </div>
-      <div class="element">
+      </section>
+      <section>
         <h3>Death Rate</h3>
         <div class="count">
           <span>{{ deathRate }}%</span>
         </div>
-      </div>
+      </section>
     </main>
   </div>
 </template>
