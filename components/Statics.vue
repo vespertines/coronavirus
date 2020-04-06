@@ -151,60 +151,6 @@ export default {
         transform: translateX(0);
       }
     }
-    .stats {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      text-align: center;
-      h2 {
-        margin-top: 30px;
-        margin-bottom: 60px;
-        font-size: 25px;
-        font-weight: 700;
-        letter-spacing: -0.025em;
-      }
-      h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        color: var(--color-grey);
-        font-size: 15px;
-        font-weight: 500;
-      }
-      .count {
-        padding-bottom: 30px;
-        span {
-          color: var(--color-pink);
-          font-size: 25px;
-          font-weight: 600;
-          letter-spacing: -0.025em;
-        }
-      }
-      .updated {
-        color: var(--color-grey);
-        font-size: 10px;
-        font-weight: 500;
-      }
-      footer {
-        position: fixed;
-        bottom: 0px;
-        right: 0;
-        width: 330px;
-        button {
-          margin-top: 30px;
-          margin-bottom: 30px;
-          padding: 10px 30px;
-          border: solid 1px var(--color-light-grey);
-          transition: background-color 0.5s ease-in-out;
-          cursor: pointer;
-          font-size: 10px;
-          font-weight: 600;
-          &:hover,
-          &:focus {
-            outline: none;
-            background-color: var(--color-lighter-grey);
-          }
-        }
-      }
-    }
     &.loading {
       min-height: 100vh;
       display: flex;
@@ -229,6 +175,63 @@ export default {
         width: auto;
         transform: translateX(0px);
         height: auto;
+      }
+    }
+  }
+
+  .stats {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+    h2 {
+      margin-top: 30px;
+      margin-bottom: 60px;
+      color: var(--color-black);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+    }
+    h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: var(--color-grey);
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .count {
+      padding-bottom: 30px;
+      span {
+        color: var(--color-pink);
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: -0.025em;
+      }
+    }
+    .updated {
+      color: var(--color-grey);
+      font-size: 10px;
+      font-weight: 500;
+    }
+    footer {
+      position: fixed;
+      bottom: 0px;
+      right: 0;
+      width: 330px;
+      button {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        padding: 10px 30px;
+        border: solid 1px var(--color-light-grey);
+        transition: background-color 0.5s ease-in-out;
+        cursor: pointer;
+        color: var(--color-grey);
+        font-size: 10px;
+        font-weight: 600;
+        &:hover,
+        &:focus {
+          outline: none;
+          background-color: var(--color-lighter-grey);
+        }
       }
     }
   }

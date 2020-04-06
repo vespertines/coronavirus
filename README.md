@@ -21,7 +21,7 @@ $ yarn generate
 
 ## Netlify
 
-[https://unruffled-montalcini-00202b.netlify.com](https://unruffled-montalcini-00202b.netlify.com
+[https://unruffled-montalcini-00202b.netlify.com](https://unruffled-montalcini-00202b.netlify.com)
 
 ## Typography
 

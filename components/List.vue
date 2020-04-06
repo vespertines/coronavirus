@@ -15,13 +15,14 @@
           </th>
         </tr>
       </thead>
-      <tbody
-        v-for="(country, index) in sortedCountries"
-        :key="index"
-        :class="{ active: selectedCountryIndex === country.countryRegion }"
-      >
-        <tr>
-          <td @click="handleSelectedCountry(index)">
+      <tbody>
+        <tr
+          v-for="(country, index) in sortedCountries"
+          :key="index"
+          :class="{ active: selectedCountryIndex === country.countryRegion }"
+          @click="handleSelectedCountry(index)"
+        >
+          <td>
             {{ country.countryRegion }}
           </td>
           <td>
@@ -128,6 +129,16 @@ export default {
         td {
           padding-top: 10px;
           padding-bottom: 10px;
+          color: var(--color-black);
+          &:first-child {
+            font-weight: 700;
+          }
+        }
+        &:hover,
+        &.active {
+          td {
+            color: var(--color-pink);
+          }
         }
       }
     }
@@ -140,19 +151,6 @@ export default {
         padding-left: 30px;
         padding-right: 30px;
         background-color: var(--color-white);
-      }
-      td {
-        &:hover,
-        &.active {
-          color: var(--color-pink);
-          font-weight: 600;
-        }
-        &:first-child {
-          font-weight: 700;
-          &:hover {
-            color: inherit;
-          }
-        }
       }
       td > svg {
         height: 18px;
