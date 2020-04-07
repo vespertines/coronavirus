@@ -4,15 +4,9 @@
       <thead>
         <tr>
           <th>Location</th>
-          <th @click="sortMethod = 'confirmed'">
-            Confirmed
-          </th>
-          <th @click="sortMethod = 'recovered'">
-            Recovered
-          </th>
-          <th @click="sortMethod = 'deaths'">
-            Deaths
-          </th>
+          <th @click="sortMethod = 'confirmed'">Confirmed</th>
+          <th @click="sortMethod = 'recovered'">Recovered</th>
+          <th @click="sortMethod = 'deaths'">Deaths</th>
         </tr>
       </thead>
       <tbody>
@@ -22,22 +16,20 @@
           :class="{ active: selectedCountryIndex === country.countryRegion }"
           @click="handleSelectedCountry(index)"
         >
-          <td>
-            {{ country.countryRegion }}
-          </td>
+          <td>{{ country.countryRegion }}</td>
           <td>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(country.confirmed)
+            new Intl.NumberFormat({ style: 'unit' }).format(country.confirmed)
             }}
           </td>
           <td>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(country.recovered)
+            new Intl.NumberFormat({ style: 'unit' }).format(country.recovered)
             }}
           </td>
           <td>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(country.deaths)
+            new Intl.NumberFormat({ style: 'unit' }).format(country.deaths)
             }}
           </td>
         </tr>
@@ -130,6 +122,7 @@ export default {
           padding-top: 10px;
           padding-bottom: 10px;
           color: var(--color-black);
+          font-weight: 500;
           &:first-child {
             font-weight: 700;
           }
@@ -148,8 +141,12 @@ export default {
       cursor: pointer;
       th,
       td {
-        padding-left: 30px;
-        padding-right: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        @media (min-width: 1024px) {
+          padding-left: 30px;
+          padding-right: 30px;
+        }
         background-color: var(--color-white);
       }
       td > svg {

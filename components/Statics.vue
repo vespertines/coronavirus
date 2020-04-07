@@ -1,11 +1,25 @@
 <template>
   <div id="app">
-    <div @click="navOpen = !navOpen" :class="{ open: navOpen }" class="burger">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div @click="navOpen = !navOpen" :class="{ open: navOpen }" class="close">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        width="20px"
+        height="20px"
+        viewBox="0 0 20 20"
+        version="1.1"
+      >
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g id="close" fill="#000000" fill-rule="nonzero">
+            <polygon
+              id="Path"
+              points="20 2.35675659 17.6432434 0 9.99997414 7.64321755 2.35675659 0 -5.68434189e-14 2.35675659 7.64321755 9.99997414 -5.64758971e-14 17.6432434 2.35675659 20 9.99997414 12.3567825 17.6431917 20 19.9999483 17.6432434 12.3567825 9.99997414"
+            />
+          </g>
+        </g>
+      </svg>
     </div>
-    <div class="container" v-if="!loading">
+    <div class="content" v-if="!loading">
       <aside :class="{ open: navOpen }">
         <List
           :countries="countries"
@@ -22,7 +36,7 @@
         />
       </div>
     </div>
-    <div v-else class="container loading">
+    <div v-else class="content loading">
       <div class="spinner"></div>
     </div>
   </div>
@@ -96,26 +110,20 @@ export default {
 #app {
   position: absolute;
   top: 0;
-  left: 330px;
-  width: calc(100% - 330px);
-  .burger {
+  left: 0;
+  width: 100%;
+  @media (min-width: 1024px) {
+    left: 330px;
+    width: calc(100% - 330px);
+  }
+  .close {
     position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 4;
-    background-color: #000;
-    padding: 0 10px;
-    transition: left 0.3s ease-in-out;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    transition: right 1s ease-in-out;
     @media (min-width: 1024px) {
       display: none;
-    }
-    span {
-      display: block;
-      width: 33px;
-      height: 2px;
-      background-color: #fff;
-      margin: 10px auto;
-      transition: transform 0.3s;
     }
     &.open {
       left: 100%;
@@ -134,10 +142,11 @@ export default {
       }
     }
   }
-  .container {
+  .content {
     margin: 0;
     padding: 0;
     min-height: 100vh;
+    background-color: var(--color-lighter-grey);
     aside {
       position: fixed;
       top: 0;
@@ -177,11 +186,13 @@ export default {
       }
     }
   }
-
   .stats {
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 360px;
     text-align: center;
+    @media (min-width: 1024px) {
+      padding-bottom: 30px;
+    }
     h2 {
       margin-top: 30px;
       margin-bottom: 60px;
@@ -203,7 +214,7 @@ export default {
         color: var(--color-pink);
         font-size: 30px;
         font-weight: 700;
-        letter-spacing: -0.05em;
+        letter-spacing: -0.025em;
       }
     }
     .updated {
@@ -212,10 +223,12 @@ export default {
       font-weight: 500;
     }
     footer {
-      position: fixed;
-      bottom: 0px;
-      right: 0;
-      width: 330px;
+      @media (min-width: 1024px) {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        width: 330px;
+      }
       button {
         margin-top: 30px;
         margin-bottom: 30px;

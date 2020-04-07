@@ -9,7 +9,7 @@
         <div class="count">
           <span>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(confirmedCases)
+            new Intl.NumberFormat({ style: 'unit' }).format(confirmedCases)
             }}
           </span>
         </div>
@@ -19,7 +19,7 @@
         <div class="count">
           <span>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(recoveredCases)
+            new Intl.NumberFormat({ style: 'unit' }).format(recoveredCases)
             }}
           </span>
         </div>
@@ -28,7 +28,9 @@
         <h3>Deaths</h3>
         <div class="count">
           <span>
-            {{ new Intl.NumberFormat({ style: 'unit' }).format(totalDeaths) }}
+            {{
+            new Intl.NumberFormat({ style: 'unit' }).format(totalDeaths)
+            }}
           </span>
         </div>
       </section>

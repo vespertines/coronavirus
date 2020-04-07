@@ -8,9 +8,7 @@
     <div class="credit">
       <span>
         Built by
-        <a href="mailto:atelier.jullian@gmail.com">
-          Kwang-Su Kim
-        </a>
+        <a href="mailto:atelier.jullian@gmail.com">Kwang-Su Kim</a>
       </span>
     </div>
   </div>
@@ -18,11 +16,13 @@
 
 <style lang="scss" scoped>
 .sidebar {
+  padding-top: 690px;
   text-align: center;
   @media (min-width: 1024px) {
     position: fixed;
     top: 0;
     left: 0;
+    padding-top: 0;
     width: 330px;
     height: 100vh;
   }
