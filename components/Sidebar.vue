@@ -23,7 +23,7 @@
     top: 0;
     left: 0;
     padding-top: 0;
-    width: 330px;
+    width: 300px;
     height: 100vh;
   }
   .logo {
@@ -48,7 +48,7 @@
       bottom: 30px;
       left: 0;
       width: 100%;
-      width: 330px;
+      width: 300px;
     }
     span {
       color: var(--color-grey);
