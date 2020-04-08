@@ -9,9 +9,9 @@
         <div class="count">
           <span>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(
-                activeCountry.confirmed
-              )
+            new Intl.NumberFormat({ style: 'unit' }).format(
+            activeCountry.confirmed
+            )
             }}
           </span>
         </div>
@@ -21,9 +21,9 @@
         <div class="count">
           <span>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(
-                activeCountry.recovered
-              )
+            new Intl.NumberFormat({ style: 'unit' }).format(
+            activeCountry.recovered
+            )
             }}
           </span>
         </div>
@@ -33,9 +33,9 @@
         <div class="count">
           <span>
             {{
-              new Intl.NumberFormat({ style: 'unit' }).format(
-                activeCountry.deaths
-              )
+            new Intl.NumberFormat({ style: 'unit' }).format(
+            activeCountry.deaths
+            )
             }}
           </span>
         </div>
@@ -50,12 +50,12 @@
         <span class="updated">
           Last updated on
           {{
-            new Date(activeCountry.lastUpdate).toLocaleDateString(undefined, {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric'
-            })
+          new Date(activeCountry.lastUpdate).toLocaleDateString(undefined, {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+          })
           }}
         </span>
       </section>

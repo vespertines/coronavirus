@@ -113,8 +113,8 @@ export default {
   left: 0;
   width: 100%;
   @media (min-width: 1024px) {
-    left: 330px;
-    width: calc(100% - 330px);
+    left: 300px;
+    width: calc(100% - 300px);
   }
   .arrow {
     position: fixed;
@@ -180,7 +180,7 @@ export default {
     }
     @media (min-width: 1024px) {
       display: grid;
-      grid-template-columns: 1fr 330px;
+      grid-template-columns: 1fr 300px;
       aside {
         position: static;
         width: auto;
@@ -230,7 +230,7 @@ export default {
         position: fixed;
         bottom: 0;
         right: 0;
-        width: 330px;
+        width: 300px;
       }
       button {
         margin-top: 30px;
