@@ -110,8 +110,11 @@ export default {
           padding-top: 20px;
           padding-bottom: 20px;
           color: var(--color-grey);
-          font-size: 15px;
+          font-size: 10px;
           font-weight: 500;
+          @media (min-width: 1024px) {
+            font-size: 15px;
+          }
         }
       }
     }
@@ -122,7 +125,12 @@ export default {
           padding-top: 10px;
           padding-bottom: 10px;
           color: var(--color-black);
+          font-size: 10px;
           font-weight: 500;
+          text-align: left;
+          @media (min-width: 1024px) {
+            font-size: 15px;
+          }
           &:first-child {
             font-weight: 700;
           }
@@ -137,7 +145,10 @@ export default {
     }
     tr {
       display: grid;
-      grid-template-columns: 3fr 1fr 1fr 1fr;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      @media (min-width: 1024px) {
+        grid-template-columns: 3fr 1fr 1fr 1fr;
+      }
       cursor: pointer;
       th,
       td {

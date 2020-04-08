@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div @click="navOpen = !navOpen" :class="{ open: navOpen }" class="close">
+    <div @click="navOpen = !navOpen" :class="{ open: navOpen }" class="arrow">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -9,13 +9,13 @@
         viewBox="0 0 20 20"
         version="1.1"
       >
-        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-          <g id="close" fill="#000000" fill-rule="nonzero">
-            <polygon
-              id="Path"
-              points="20 2.35675659 17.6432434 0 9.99997414 7.64321755 2.35675659 0 -5.68434189e-14 2.35675659 7.64321755 9.99997414 -5.64758971e-14 17.6432434 2.35675659 20 9.99997414 12.3567825 17.6431917 20 19.9999483 17.6432434 12.3567825 9.99997414"
-            />
-          </g>
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <polygon
+            id="Path"
+            fill="#000000"
+            fill-rule="nonzero"
+            points="12.1684211 2 10.6105263 3.53684211 15.8105263 8.73684211 0 8.73684211 0 10.9263158 15.8105263 10.9263158 10.6105263 16.1263158 12.1684211 17.6631579 20 9.83157895"
+          />
         </g>
       </svg>
     </div>
@@ -116,12 +116,15 @@ export default {
     left: 330px;
     width: calc(100% - 330px);
   }
-  .close {
+  .arrow {
     position: fixed;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    left: 0;
+    right: 0;
     z-index: 10;
     transition: right 1s ease-in-out;
+    width: 100;
+    text-align: center;
     @media (min-width: 1024px) {
       display: none;
     }
